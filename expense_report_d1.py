@@ -43,4 +43,29 @@ def calculate2(file):
                     print((nums[i]*nums[j]*nums[k]))
                     return (nums[i]*nums[j]*nums[k])
 
-calculate2("advent_of_code_expense_report.txt")
+# calculate2("advent_of_code_expense_report.txt")
+
+
+def calculate2_faster(file):
+
+    #sort the arr
+    nums = file_to_list(file)
+    nums.sort()
+    
+
+
+
+
+
+
+
+
+
+
+
+calculate2_faster("advent_of_code_expense_report.txt")
+
+
+
+
+
