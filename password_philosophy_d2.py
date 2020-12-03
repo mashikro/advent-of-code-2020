@@ -1,3 +1,5 @@
+# -- PART ONE --
+
 # Their password database seems to be a little corrupted: some of the passwords wouldn't 
 # have been allowed by the Official Toboggan Corporate Policy that was in effect when they were chosen.
 
@@ -75,4 +77,40 @@ def find_valid_pw(file):
     return ret
 
 print(find_valid_pw("password_philosophy_input.txt"))
+
+# -- PART TWO --
+
+# Each policy actually describes two positions in the password, where 1 means the first character, 
+# 2 means the second character, and so on. (Be careful; Toboggan Corporate Policies have no concept 
+#     of "index zero"!) Exactly one of these positions must contain the given letter. 
+# Other occurrences of the letter are irrelevant for the purposes of policy enforcement.
+
+# Given the same example list from above:
+
+# 1-3 a: abcde is valid: position 1 contains a and position 3 does not.
+# 1-3 b: cdefg is invalid: neither position 1 nor position 3 contains b.
+# 2-9 c: ccccccccc is invalid: both position 2 and position 9 contain c.
+# How many passwords are valid according to the new interpretation of the policies?
+
+def find_valid_pw_p2(file):
+    passwords = file_to_dict(file)
+    ret = 0
+
+    for pw in passwords:
+        # print("pw", pw)
+        # print("paswords[pw]", passwords[pw])
+        index_1 = pw[0]-1
+        index_2 = pw[1]-1
+        r = [False, False]
+        if (passwords[pw][index_1] == pw[2]):
+            r[0] = True
+        if (passwords[pw][index_2] == pw[2]):
+            r[1] = True
+        if r.count(True)==1:
+            ret +=1
+
+    return ret
+
+print(find_valid_pw_p2("password_philosophy_input.txt"))
+
 
