@@ -64,7 +64,7 @@ def find_valid_passports(file):
     return valid
 
 
-# find_valid_passports("password_processing_input.txt")
+find_valid_passports("password_processing_input.txt")
 
 
 # -- PART TWO --
@@ -216,4 +216,4 @@ def find_present_valid_passports(file):
     print("Valid passports ==", valid)
     return valid
 
-find_present_valid_passports("password_processing_input.txt")
+# find_present_valid_passports("password_processing_input.txt")
